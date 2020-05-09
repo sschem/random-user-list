@@ -37,13 +37,14 @@ class MainScreen extends Component {
     }
 
     render() {
-        const { isLoadingUsers, userList, filteredUserList } = this.state;
+        const { isLoadingUsers, userList, filteredUserList, filterText } = this.state;
         return (
             <div>
                 <Spinner visible={isLoadingUsers} />
                 <UserFilter
                     visible={this.mustShowFilter()}
                     onTextChange={this.filterUserList}
+                    text={filterText}
                 />
                 <UserList
                     visible={!this.mustShowDetail()}
@@ -53,6 +54,7 @@ class MainScreen extends Component {
                 <UserDetail
                     visible={this.mustShowDetail()}
                     user={this.state.selectedUser}
+                    onBackPress={() => this.setState({ selectedUser: undefined })}
                 />
             </div>
         );

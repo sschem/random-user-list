@@ -3,10 +3,10 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
-import Typography from '@material-ui/core/Typography';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import IconButton from '@material-ui/core/IconButton';
 import ContactMailTwoToneIcon from '@material-ui/icons/ContactMailTwoTone';
+import TitleDescription from '../components/TitleDescription';
 
 const UserListItem = (props) => {
     const { user, onUserSelected } = props;
@@ -19,15 +19,8 @@ const UserListItem = (props) => {
                 primary={user.fullName}
                 secondary={
                     <React.Fragment>
-                        <Typography component="span" variant="body2" style={{ display: 'inline' }} color="textPrimary">
-                            Teléfono:&nbsp;
-                        </Typography>
-                        {user.allPhones}
-                        <br></br>
-                        <Typography component="span" variant="body2" style={{ display: 'inline' }} color="textPrimary">
-                            Dirección:&nbsp;
-                        </Typography>
-                        {user.fullAddress}
+                        <TitleDescription title="Teléfono" description={user.allPhones} />                        
+                        <TitleDescription title="Dirección" description={user.fullAddress} />
                     </React.Fragment>
                 }
             />

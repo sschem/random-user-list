@@ -4,11 +4,13 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import InputAdornment from '@material-ui/core/InputAdornment';
 
 const UserFilter = (props) => {
-    const { onTextChange, visible } = props;
+    const { onTextChange, visible, text } = props;
     return (
         visible &&
         <div style={{ margin: "10 0 10 0" }}>
             <TextField
+                autoFocus
+                value={text}
                 label="Filtrar por Nombre"
                 variant="outlined"
                 size="small"
