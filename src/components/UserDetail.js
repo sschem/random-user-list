@@ -6,14 +6,12 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import TitleDescription from '../components/TitleDescription';
 
 const UserDetail = (props) => {
     const getFormatedDateOfBirthday = (user) => {
         const date = new Date(user.dob.date);
-        console.log('picture', user.picture.large);
         return date.toLocaleDateString('es-AR');
     }
 
